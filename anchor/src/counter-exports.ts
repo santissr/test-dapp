@@ -1,10 +1,11 @@
 // Here we export some useful types and functions for interacting with the Anchor program.
-import { Cluster, PublicKey } from '@solana/web3.js';
-import type { Counter } from '../target/types/counter';
-import { IDL as CounterIDL } from '../target/types/counter';
+import {Cluster, PublicKey} from '@solana/web3.js';
+import type {Counter} from '../target/types/counter';
+import {IDL as CounterIDL} from '../target/types/counter';
+import {Program} from "@coral-xyz/anchor";
 
 // Re-export the generated IDL and type
-export { Counter, CounterIDL };
+export {Counter, CounterIDL};
 export type CounterProgram = Program<Counter>;
 
 // After updating your program ID (e.g. after running `anchor keys sync`) update the value below.
