@@ -37,7 +37,7 @@ export function toWalletAdapterNetwork(
 
 export const defaultClusters: Cluster[] = [
   {
-    name: 'devnet',
+    name: 'xx',
     endpoint: clusterApiUrl('devnet'),
     network: ClusterNetwork.Devnet,
   },

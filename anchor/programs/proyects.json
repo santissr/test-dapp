@@ -1,0 +1,32 @@
+
+{
+   "Proyecto1": {
+      "Sponsor": "Empresa 1",
+      "Meta de Recaudo": "15%",
+      "Numero de Inversionistas": 30,
+      "Fecha de Cierre": "Septiembre 2024",
+      "Rentabilidad Esperada": "30%"
+   },
+   "Proyecto2": {
+      "Sponsor": "Empresa 2",
+      "Meta de Recaudo": "20%",
+      "Numero de Inversionistas": 100,
+      "Fecha de Cierre": "Enero 2025",
+      "Rentabilidad Esperada": "20%"
+   },
+   "Proyecto3": {
+      "Sponsor": "Empresa 3",
+      "Meta de Recaudo": "30%",
+      "Numero de Inversionistas": 80,
+      "Fecha de Cierre": "Diciembre 2024",
+      "Rentabilidad Esperada": "25%"
+   },
+   "Proyecto4": {
+      "Sponsor": "Empresa 4",
+      "Meta de Recaudo": "25%",
+      "Numero de Inversionistas": 200,
+      "Fecha de Cierre": "Marzo 2025",
+      "Rentabilidad Esperada": "40%"
+   }
+
+}
