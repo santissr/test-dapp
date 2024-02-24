@@ -1,15 +1,18 @@
 'use client';
 
-import { useWallet } from '@solana/wallet-adapter-react';
-import { WalletButton } from '../solana/solana-provider';
-import { AppHero, ellipsify } from '../ui/ui-layout';
-import { ExplorerLink } from '../cluster/cluster-ui';
-import { useCounterProgram } from './counter-data-access';
-import { CounterCreate, CounterList } from './counter-ui';
+import {useWallet} from '@solana/wallet-adapter-react';
+import {WalletButton} from '../solana/solana-provider';
+import {AppHero, ellipsify} from '../ui/ui-layout/ui-layout';
+import {ExplorerLink} from '../cluster/cluster-ui';
+import {useCounterProgram} from './counter-data-access';
+import {CounterCreate, CounterList} from './counter-ui';
 
 export default function CounterFeature() {
-  const { publicKey } = useWallet();
-  const { programId } = useCounterProgram();
+  const {publicKey} = useWallet();
+  const {programId} = useCounterProgram();
+
+
+  console.log(publicKey, 'This is the publicKey');
 
   return publicKey ? (
     <div>
@@ -25,15 +28,15 @@ export default function CounterFeature() {
             label={ellipsify(programId.toString())}
           />
         </p>
-        <CounterCreate />
+        <CounterCreate/>
       </AppHero>
-      <CounterList />
+      <CounterList/>
     </div>
   ) : (
     <div className="max-w-4xl mx-auto">
       <div className="hero py-[64px]">
         <div className="hero-content text-center">
-          <WalletButton />
+          <WalletButton/>
         </div>
       </div>
     </div>
