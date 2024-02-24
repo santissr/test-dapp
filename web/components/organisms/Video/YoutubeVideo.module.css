@@ -1,0 +1,14 @@
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: #0e0f24;
+}
+
+.iframeVideo {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}

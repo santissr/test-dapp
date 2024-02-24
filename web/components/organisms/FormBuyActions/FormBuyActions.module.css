@@ -1,0 +1,84 @@
+.section {
+  width: 100%;
+  height: 700px;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+
+  width: 511px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 10px 20px
+}
+
+.subContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.danger {
+  display: flex;
+  background: #8B2CF5;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.title2 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.p {
+  color: black;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.label {
+  font-size: 12px;
+  color: black;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.button {
+  background: #260D39;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}

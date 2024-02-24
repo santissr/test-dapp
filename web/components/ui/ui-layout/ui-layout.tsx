@@ -1,43 +1,44 @@
 'use client';
 
-import { WalletButton } from '../solana/solana-provider';
+import {WalletButton} from '../../solana/solana-provider';
 import * as React from 'react';
-import { ReactNode, Suspense, useEffect, useRef } from 'react';
-
+import {ReactNode, Suspense, useEffect, useRef} from 'react';
+import styles from './ui-layout.module.css'
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
 
-import { AccountChecker } from '../account/account-ui';
-import {
-  ClusterChecker,
-  ClusterUiSelect,
-  ExplorerLink,
-} from '../cluster/cluster-ui';
-import toast, { Toaster } from 'react-hot-toast';
+import {AccountChecker} from '../../account/account-ui';
+import {ClusterChecker, ClusterUiSelect, ExplorerLink,} from '../../cluster/cluster-ui';
+import toast, {Toaster} from 'react-hot-toast';
+import propiImage from '@/src/assets/propi-image2.png'
+import Image from "next/image";
 
 const pages: { label: string; path: string }[] = [
-  { label: 'Account', path: '/account' },
-  { label: 'Clusters', path: '/clusters' },
-  { label: 'Counter', path: '/counter' },
+  {label: 'Perfil', path: '/account'},
+  {label: 'Propiedades', path: '/page-properties'}, // Account
+  {label: '¿Como funciona?', path: '/clusters'}, //cluster
+  {label: 'Sobre nosotros', path: '/counter'}, // Counter
 ];
 
-export function UiLayout({ children }: { children: ReactNode }) {
+export function UiLayout({children}: { children: ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
-        <div className="flex-1">
-          <Link className="btn btn-ghost normal-case text-xl" href="/">
-            <img
-              className="h-4 md:h-6"
-              alt="Solana Logo"
-              src="/solana-logo.png"
-            />
-          </Link>
-          <ul className="menu menu-horizontal px-1 space-x-2">
-            {pages.map(({ label, path }) => (
-              <li key={path}>
+    <div className={styles.d}>
+      <div className={styles.navBarContainer}>
+        <div style={{display: 'flex', gap: '100px'}}>
+          <div className={styles.imageContainer}>
+            <Link href="/">
+              <Image
+                className={styles.image}
+                alt="Solana Logo"
+                src={propiImage}
+              />
+            </Link>
+          </div>
+          <ul className={styles.uls}>
+            {pages.map(({label, path}) => (
+              <li className={styles.lis} key={path}>
                 <Link
                   className={pathname.startsWith(path) ? 'active' : ''}
                   href={path}
@@ -48,15 +49,15 @@ export function UiLayout({ children }: { children: ReactNode }) {
             ))}
           </ul>
         </div>
-        <div className="flex-none space-x-2">
-          <WalletButton />
-          <ClusterUiSelect />
+        <div className={styles.containerButtons}>
+          <WalletButton/>
+          <ClusterUiSelect/>
         </div>
       </div>
       <ClusterChecker>
-        <AccountChecker />
+        <AccountChecker/>
       </ClusterChecker>
-      <div className="flex-grow mx-4 lg:mx-auto">
+      <div className={styles.d}>
         <Suspense
           fallback={
             <div className="text-center my-32">
@@ -66,7 +67,7 @@ export function UiLayout({ children }: { children: ReactNode }) {
         >
           {children}
         </Suspense>
-        <Toaster position="bottom-right" />
+        <Toaster position="bottom-right"/>
       </div>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <aside>
@@ -88,14 +89,14 @@ export function UiLayout({ children }: { children: ReactNode }) {
 }
 
 export function AppModal({
-  children,
-  title,
-  hide,
-  show,
-  submit,
-  submitDisabled,
-  submitLabel,
-}: {
+                           children,
+                           title,
+                           hide,
+                           show,
+                           submit,
+                           submitDisabled,
+                           submitLabel,
+                         }: {
   children: ReactNode;
   title: string;
   hide: () => void;
@@ -142,10 +143,10 @@ export function AppModal({
 }
 
 export function AppHero({
-  children,
-  title,
-  subtitle,
-}: {
+                          children,
+                          title,
+                          subtitle,
+                        }: {
   children?: ReactNode;
   title: ReactNode;
   subtitle: ReactNode;
