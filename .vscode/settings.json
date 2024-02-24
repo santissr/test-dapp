@@ -1,0 +1,15 @@
+// configuraciónes para el editor vscode para este proyecto
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode", // formatear con prettier
+	"editor.formatOnSave": true, // formatear al guardar
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.rules.customizations": [
+		// muestrar todas las alertas del EsLint en el editor en amarillo, para no confundir con los errores de typescript
+		{
+			"rule": "*",
+			"severity": "warn"
+		}
+	]
+}
