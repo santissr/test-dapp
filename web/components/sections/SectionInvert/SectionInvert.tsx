@@ -1,37 +1,39 @@
+'use client'
 import {CompanyNamePhoto} from "@/components/organisms/companyNamePhoto/CompanyNamePhoto";
-import {ReactElement} from "react";
+import {ReactElement, useState} from "react";
 import {YoutubeVideo} from "@/components/organisms/Video/YoutubeVideo";
 import styles from './SectionInvert.module.css'
 import Link from "next/link";
+import {projects} from "../../../../anchor/programs/projects";
+import {Cards} from "@/components/organisms/Cards/Cards";
 
+const cards = projects
 export const SectionInvert = (): ReactElement => {
+  const [infoState, setInfoState] = useState(cards[0])
+
+
   return <section className={styles.section}>
     <h1 className={styles.h1}>Encuentra proyectos para invertir y crecer</h1>
     <div>
       <div className={styles.containerVideo}>
-        <YoutubeVideo urlVideo={'https://www.youtube.com/embed/thLKNCBYimE'}/>
+        <YoutubeVideo urlVideo={'https://www.youtube.com/embed/km8YSiE8JJw'}/>
       </div>
       <div className={styles.containerInvert}>
         <CompanyNamePhoto/>
         <div>
           <p className={styles.title}>Campaña</p>
-          <p className={styles.text}>Conviertete en motor de nuestro sueño</p>
+          <p className={styles.text}>{infoState.campain}</p>
         </div>
-        <Link href={'/property-id/12323'}>
+        <Link href={`/property-id/${infoState.index}`}>
           <button className={styles.button}>Invertir</button>
         </Link>
       </div>
     </div>
     <div className={styles.containerInfo}>
       <div>
-        <h1 className={styles.title2}>Nido de agua</h1>
+        <h1 className={styles.title2}>{infoState.name}</h1>
         <p className={styles.subtitle}><span className={styles.span}>Medellin</span>, Colombia</p>
-        <p className={styles.paragraph}>Lorem ipsum dolor sit amet consectetur adipiscing elit magnis, risus enim
-          gravida luctus torquent
-          sollicitudin cubilia. Placerat posuere sollicitudin aliquet blandit ultrices integer platea facilisi tortor
-          consequat, sapien euismod ante tellus pharetra aliquam per torquent. Mattis bibendum praesent mus convallis
-          rhoncus penatibus auctor, lectus sodales platea natoque rutrum elementum condimentum, viverra tortor augue
-          morbi lacus commodo.</p>
+        <p className={styles.paragraph}>{infoState.description}</p>
       </div>
       <div className={styles.container}>
         <h2 className={styles.title2}>$ 8278 Millones COP <span
@@ -76,6 +78,14 @@ export const SectionInvert = (): ReactElement => {
           </div>
         </div>
       </div>
+    </div>
+    <div>
+    </div>
+    <div className={styles.containerCards}>
+      {cards.map((card, index) => (
+        <Cards onClick={() => {
+          setInfoState(cards[index])
+        }} key={index} link={card.linkImg} name={card.name} text={card.description}/>))}
     </div>
   </section>
 }
