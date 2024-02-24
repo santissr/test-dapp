@@ -8,7 +8,7 @@ import { createContext, ReactNode, useContext } from 'react';
 import toast from 'react-hot-toast';
 
 export interface Cluster {
-  name: string;
+
   endpoint: string;
   network?: ClusterNetwork;
   active?: boolean;
@@ -20,6 +20,7 @@ export enum ClusterNetwork {
   Devnet = 'devnet',
   Custom = 'custom',
 }
+
 export function toWalletAdapterNetwork(
   cluster?: ClusterNetwork
 ): WalletAdapterNetwork | undefined {
