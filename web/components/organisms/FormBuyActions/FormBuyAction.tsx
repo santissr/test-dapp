@@ -1,19 +1,25 @@
 import styles from './FormBuyActions.module.css'
 import {IconFire} from "@/components/svgs/IconFire";
 import {YoutubeVideo} from "@/components/organisms/Video/YoutubeVideo";
+import {projects} from "../../../../anchor/programs/projects";
+import {useState} from "react";
 
-export const FormBuyAction = () => {
+const cards = projects;
+export const FormBuyAction = ({id}: { id: string }) => {
+  const [infoProject, setInfoProject] = useState(cards[Number(id)])
+
+
   return <section className={styles.section}>
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <h1 className={styles.title}>Propiedad chanchito feliz</h1>
+        <h1 className={styles.title}>{infoProject.name}</h1>
         <div className={styles.danger}>
           <IconFire/>
-          <p className={styles.paragraph}>60 dias para cerrar</p>
+          <p className={styles.paragraph}>{infoProject.closeDate} dias para cerrar</p>
         </div>
       </div>
       <div>
-        <YoutubeVideo urlVideo={'https://www.youtube.com/embed/thLKNCBYimE'}/>
+        <YoutubeVideo urlVideo={'https://www.youtube.com/embed/km8YSiE8JJw'}/>
         <div style={{
           background: 'black',
           width: '100%',
