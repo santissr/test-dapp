@@ -52,7 +52,7 @@ export function AccountBalanceCheck({address}: { address: PublicKey }) {
     return (
       <div className="alert alert-warning text-warning-content/80 rounded-none flex justify-center">
         <span>
-          You are connected to <strong>{cluster.name}</strong> but your account
+          You are connected to <strong>{cluster.network}</strong> but your account
           is not found on this cluster.
         </span>
         <button
@@ -245,7 +245,7 @@ export function AccountTransactions({address}: { address: PublicKey }) {
   return (
     <div className="space-y-2">
       <div className="flex justify-between">
-        <h2 className="text-2xl font-bold">Transaction History</h2>
+        <h2 className="text-2xl font-bold">Historial de transacciones</h2>
         <div className="space-x-2">
           {query.isLoading ? (
             <span className="loading loading-spinner"></span>

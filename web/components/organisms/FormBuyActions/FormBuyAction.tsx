@@ -2,20 +2,18 @@ import styles from './FormBuyActions.module.css'
 import {IconFire} from "@/components/svgs/IconFire";
 import {YoutubeVideo} from "@/components/organisms/Video/YoutubeVideo";
 import {projects} from "../../../../anchor/programs/projects";
-import {useState} from "react";
 
-const cards = projects;
 export const FormBuyAction = ({id}: { id: string }) => {
-  const [infoProject, setInfoProject] = useState(cards[Number(id)])
 
+  const cards = projects;
 
   return <section className={styles.section}>
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <h1 className={styles.title}>{infoProject.name}</h1>
+        <h1 className={styles.title}>Parques Del Rio Sabaneta 158</h1>
         <div className={styles.danger}>
           <IconFire/>
-          <p className={styles.paragraph}>{infoProject.closeDate} dias para cerrar</p>
+          <p className={styles.paragraph}>60 dias para cerrar</p>
         </div>
       </div>
       <div>
@@ -28,10 +26,9 @@ export const FormBuyAction = ({id}: { id: string }) => {
           borderBottomLeftRadius: '20px'
         }}></div>
       </div>
-      <h1 className={styles.title2}>¿Que es nido de agua?</h1>
-      <p className={styles.p}>Un bosque que te atiende de lunes a domingo donde sea que estes y a la hora que este donde
-        quiera
-        blalblablalblalavl</p>
+      <h1 className={styles.title2}>¿Que es Parques Del Rio?</h1>
+      <p className={styles.p}>Hermosas casas cerca del lugar que soñas, imagina no solamente hacer parte de este gran
+        proyecto, sino además de esto recibir un pago por esto</p>
       <form className={styles.form}>
         <label className={styles.label}>Tokens a comprar:</label>
         <input className={styles.input} placeholder={'Ingresa cantidad a adquirir'}></input>
