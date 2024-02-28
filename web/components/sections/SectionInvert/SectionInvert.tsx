@@ -9,7 +9,7 @@ import {Cards} from "@/components/organisms/Cards/Cards";
 
 const cards = projects
 export const SectionInvert = (): ReactElement => {
-  const [infoState, setInfoState] = useState(cards[0])
+  const [infoState, setInfoState] = useState(cards[1])
 
 
   return <section className={styles.section}>
